@@ -1,6 +1,6 @@
 # dotfiles
 Personal dotfiles
 
-# Pour modifier le theme GTK
+# Changing gtk theme
 vim .config/gtk-3.0/settings.ini 
 
