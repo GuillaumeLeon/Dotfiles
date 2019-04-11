@@ -117,7 +117,9 @@ bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
 
 exec --no-startup-id compton
-exec --no-startup-id feh --bg-scale ~/Images/prism.png
+
+# Wallpaper
+exec --no-startup-id feh --bg-scale ~/Images/wallpaper_nord.jpg
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

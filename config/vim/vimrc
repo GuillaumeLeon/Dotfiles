@@ -22,6 +22,8 @@ set mouse=a
 " max size of a row
 set textwidth=80
 
+set termguicolors
+
 " Auto indentation
 set smartindent
 set autoindent 
@@ -68,6 +70,7 @@ Plugin 'https://github.com/skammer/vim-css-color'
 Plugin 'morhetz/gruvbox'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'https://github.com/aonemd/kuroi.vim'
 
 call vundle#end()         
 filetype plugin indent on 
@@ -104,10 +107,10 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 "#############
 
 " Automatically open NERDTREE at vim start
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 " Automatically closing vim if the nerdtree tab is the last one 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "######################
 "#  Theme and colors  #
@@ -116,10 +119,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set background=dark    " Setting dark mode
 "set background=light   " Setting light mode
 
-"colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
 
 "colorscheme gruvbox
 
-colorscheme codedark
+"colorscheme codedark
 
 "colorscheme nord
+
+"colorscheme kuroi

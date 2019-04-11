@@ -87,6 +87,11 @@ ws-icon-4 = 5;
 type = internal/xwindow
 label = %title:0:30:...%
 
+[module/redshift]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/redshift.sh
+
 [module/filesystem]
 type = internal/fs
 interval = 25
