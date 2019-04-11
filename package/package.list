@@ -203,6 +203,7 @@ fonts-dejavu-core
 fonts-dejavu-extra
 fonts-droid-fallback
 fonts-font-awesome
+fonts-freefont-ttf
 fonts-lato
 fonts-liberation
 fonts-linuxlibertine
@@ -550,6 +551,7 @@ libavresample3:amd64
 libavutil55:amd64
 libbabl-0.1-0:amd64
 libbase-java
+libbasicusageenvironment1:amd64
 libbcmail-java
 libbcpkix-java
 libbcprov-java
@@ -571,6 +573,7 @@ libboost-chrono1.62.0:amd64
 libboost-date-time1.62.0:amd64
 libboost-filesystem1.62.0:amd64
 libboost-iostreams1.62.0:amd64
+libboost-locale1.62.0:amd64
 libboost-program-options1.62.0:amd64
 libboost-regex1.62.0:amd64
 libboost-serialization1.62.0:amd64
@@ -614,6 +617,7 @@ libcaribou-gtk3-module:amd64
 libcaribou0:amd64
 libcc1-0:amd64
 libccolamd2:amd64
+libcddb2
 libcdio-cdda1:amd64
 libcdio-paranoia1:amd64
 libcdio13:amd64
@@ -708,6 +712,7 @@ libdrm-nouveau2:amd64
 libdrm-radeon1:amd64
 libdrm2:amd64
 libdv4:amd64
+libdvbpsi10:amd64
 libdvd-pkg
 libdvdcss-dev:amd64
 libdvdcss2:amd64
@@ -716,6 +721,7 @@ libdvdnav4:amd64
 libdvdread4:amd64
 libe-book-0.1-1:amd64
 libebackend-1.2-10:amd64
+libebml4v5:amd64
 libebook-1.2-16:amd64
 libebook-contacts-1.2-2:amd64
 libebur128-1:amd64
@@ -926,6 +932,7 @@ libgpod4:amd64
 libgraphite2-3:amd64
 libgraphite2-dev
 libgrilo-0.3-0:amd64
+libgroupsock8:amd64
 libgs9:amd64
 libgs9-common
 libgsasl7
@@ -1080,6 +1087,7 @@ libldb1:amd64
 liblibreofficekitgtk
 liblilv-0-0
 liblirc-client0:amd64
+liblivemedia57:amd64
 libllvm3.9:amd64
 libloader-java
 liblocale-gettext-perl
@@ -1117,6 +1125,7 @@ libmail-sendmail-perl
 libmailtools-perl
 libmailutils5:amd64
 libmariadbclient18:amd64
+libmatroska6v5:amd64
 libmbim-glib4:amd64
 libmbim-proxy
 libmediaart-2.0-0:amd64
@@ -1124,6 +1133,7 @@ libmenu-cache-bin
 libmenu-cache3:amd64
 libmetis5:amd64
 libmhash2:amd64
+libmicrodns0:amd64
 libmikmod3:amd64
 libminiupnpc10:amd64
 libmission-control-plugins0
@@ -1221,6 +1231,7 @@ libopencv-objdetect2.4v5:amd64
 libopencv-video2.4v5:amd64
 libopenexr22:amd64
 libopenjp2-7:amd64
+libopenmpt-modplug1:amd64
 libopenmpt0:amd64
 libopts25:amd64
 libopus0:amd64
@@ -1295,7 +1306,9 @@ libpostproc54:amd64
 libpotrace0
 libpq5:amd64
 libprocps6:amd64
+libprotobuf-lite10:amd64
 libprotobuf10:amd64
+libproxy-tools
 libproxy1-plugin-gsettings:amd64
 libproxy1-plugin-networkmanager:amd64
 libproxy1v5:amd64
@@ -1328,6 +1341,7 @@ libqt5gui5:amd64
 libqt5network5:amd64
 libqt5svg5:amd64
 libqt5widgets5:amd64
+libqt5x11extras5:amd64
 libqt5xml5:amd64
 libquadmath0:amd64
 libquvi-0.9-0.9.3:amd64
@@ -1374,6 +1388,7 @@ libreoffice-style-tango
 libreoffice-writer
 libreofficekit-data
 librepository-java
+libresid-builder0c2a
 librest-0.7-0:amd64
 librevenge-0.0-0:amd64
 librhythmbox-core10:amd64
@@ -1401,6 +1416,7 @@ libsasl2-modules:amd64
 libsasl2-modules-db:amd64
 libsaxonhe-java
 libsbc1:amd64
+libsdl-image1.2:amd64
 libsdl1.2-dev
 libsdl1.2debian:amd64
 libseccomp2:amd64
@@ -1418,6 +1434,7 @@ libsgutils2-2
 libshine3:amd64
 libshout3:amd64
 libsidplay1v5
+libsidplay2
 libsidplayfp4:amd64
 libsigc++-2.0-0v5:amd64
 libsigsegv2:amd64
@@ -1523,6 +1540,7 @@ libunistring0:amd64
 libupnp6
 libupower-glib3:amd64
 liburi-perl
+libusageenvironment3:amd64
 libusb-0.1-4:amd64
 libusb-1.0-0:amd64
 libusbmuxd4:amd64
@@ -1534,6 +1552,7 @@ libuv1:amd64
 libv4l-0:amd64
 libv4lconvert0:amd64
 libva-drm1:amd64
+libva-wayland1:amd64
 libva-x11-1:amd64
 libva1:amd64
 libvala-0.34-0:amd64
@@ -1541,6 +1560,9 @@ libvdpau-va-gl1:amd64
 libvdpau1:amd64
 libvisio-0.1-1:amd64
 libvisual-0.4-0:amd64
+libvlc-bin:amd64
+libvlc5:amd64
+libvlccore9:amd64
 libvo-aacenc0:amd64
 libvo-amrwbenc0:amd64
 libvorbis0a:amd64
@@ -1673,6 +1695,7 @@ libxdamage1:amd64
 libxdg-basedir1
 libxdmcp-dev:amd64
 libxdmcp6:amd64
+libxdo3:amd64
 libxerces2-java
 libxext-dev:amd64
 libxext6:amd64
@@ -1768,7 +1791,6 @@ lua-socket:amd64
 lutefisk
 lxappearance
 lxde-common
-lxde-core
 lxde-icon-theme
 lxde-settings-daemon
 lxlock
@@ -1830,6 +1852,7 @@ nano
 nautilus
 nautilus-data
 nautilus-sendto
+ncmpcpp
 ncurses-base
 ncurses-bin
 ncurses-term
@@ -2140,6 +2163,7 @@ tracker-miner-fs
 transfig
 transmission-common
 transmission-gtk
+tty-clock
 tumbler
 tumbler-common
 tzdata
@@ -2172,6 +2196,18 @@ vim-runtime
 vim-tiny
 vinagre
 vino
+vlc
+vlc-bin
+vlc-data
+vlc-l10n
+vlc-plugin-base:amd64
+vlc-plugin-notify:amd64
+vlc-plugin-qt:amd64
+vlc-plugin-samba:amd64
+vlc-plugin-skins2:amd64
+vlc-plugin-video-output:amd64
+vlc-plugin-video-splitter:amd64
+vlc-plugin-visualization:amd64
 wamerican
 wayland-protocols
 wfrench
@@ -2210,6 +2246,7 @@ xcb-proto
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
+xdotool
 xfce4-panel
 xfonts-100dpi
 xfonts-75dpi
@@ -2227,6 +2264,7 @@ xorg-sgml-doctools
 xpdf
 xscreensaver
 xscreensaver-data
+xsel
 xserver-common
 xserver-xephyr
 xserver-xorg
