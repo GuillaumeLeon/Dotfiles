@@ -75,7 +75,7 @@ chrome-gnome-shell				install
 cli-common					install
 cmake						install
 cmake-data					install
-code						install
+code						deinstall
 coinor-libcbc3					install
 coinor-libcgl1					install
 coinor-libclp1					install
@@ -177,11 +177,12 @@ evolution-data-server-common			install
 evolution-plugins				install
 exfat-fuse					install
 exfat-utils					install
-exim4-base					install
-exim4-config					install
-exim4-daemon-light				install
+exim4-base					deinstall
+exim4-config					deinstall
+exim4-daemon-light				deinstall
 fakeroot					install
 feh						install
+ffmpeg						install
 fig2dev						install
 file						install
 file-roller					install
@@ -227,6 +228,7 @@ gconf-service					install
 gconf2						install
 gconf2-common					install
 gcr						install
+gdb						install
 gdisk						install
 gdm3						install
 gedit						install
@@ -406,7 +408,6 @@ gtk2-engines:amd64				install
 gtk2-engines-murrine:amd64			install
 gtk2-engines-pixbuf:amd64			install
 gucharmap					install
-guile-2.0-libs:amd64				install
 gvfs:amd64					install
 gvfs-backends					install
 gvfs-bin					install
@@ -464,7 +465,6 @@ ispell						install
 iw						install
 java-common					install
 javascript-common				install
-john						deinstall
 kbd						install
 keyboard-configuration				install
 klibc-utils					install
@@ -544,10 +544,13 @@ libavahi-gobject0:amd64				install
 libavahi-ui-gtk3-0:amd64			install
 libavc1394-0:amd64				install
 libavcodec57:amd64				install
+libavdevice57:amd64				install
 libavfilter6:amd64				install
 libavformat57:amd64				install
 libavresample3:amd64				install
 libavutil55:amd64				install
+libbabeltrace-ctf1:amd64			install
+libbabeltrace1:amd64				install
 libbabl-0.1-0:amd64				install
 libbase-java					install
 libbasicusageenvironment1:amd64			install
@@ -572,7 +575,6 @@ libboost-chrono1.62.0:amd64			install
 libboost-date-time1.62.0:amd64			install
 libboost-filesystem1.62.0:amd64			install
 libboost-iostreams1.62.0:amd64			install
-libboost-locale1.62.0:amd64			install
 libboost-program-options1.62.0:amd64		install
 libboost-regex1.62.0:amd64			install
 libboost-serialization1.62.0:amd64		install
@@ -591,6 +593,7 @@ libc-bin					install
 libc-dev-bin					install
 libc-l10n					install
 libc6:amd64					install
+libc6-dbg:amd64					install
 libc6-dev:amd64					install
 libcaca-dev					install
 libcaca0:amd64					install
@@ -718,6 +721,7 @@ libdvdcss2:amd64				install
 libdvdcss2-dbgsym:amd64				install
 libdvdnav4:amd64				install
 libdvdread4:amd64				install
+libdw1:amd64					install
 libe-book-0.1-1:amd64				install
 libebackend-1.2-10:amd64			install
 libebml4v5:amd64				install
@@ -935,7 +939,6 @@ libgrilo-0.3-0:amd64				install
 libgroupsock8:amd64				install
 libgs9:amd64					install
 libgs9-common					install
-libgsasl7					install
 libgsf-1-114:amd64				install
 libgsf-1-common					install
 libgsf-bin					install
@@ -1074,7 +1077,6 @@ libkpathsea6:amd64				install
 libkrb5-3:amd64					install
 libkrb5support0:amd64				install
 libksba8:amd64					install
-libkyotocabinet16v5:amd64			install
 liblangtag-common				install
 liblangtag1:amd64				install
 liblapack-dev					install
@@ -1124,7 +1126,6 @@ libmagickwand-6.q16-3:amd64			install
 libmail-java					install
 libmail-sendmail-perl				install
 libmailtools-perl				install
-libmailutils5:amd64				install
 libmariadbclient18:amd64			install
 libmatroska6v5:amd64				install
 libmbim-glib4:amd64				install
@@ -1167,7 +1168,6 @@ libmpfr4:amd64					install
 libmpg123-0:amd64				install
 libmplex2-2.1-0					install
 libmpx2:amd64					install
-libmsgpackc2:amd64				install
 libmspub-0.1-1:amd64				install
 libmsv-java					install
 libmtdev1:amd64					install
@@ -1205,13 +1205,13 @@ libnm-util2:amd64				install
 libnm0:amd64					install
 libnma0:amd64					install
 libnotify4:amd64				install
+libnotmuch4					install
 libnpth0:amd64					install
 libnspr4:amd64					install
 libnss-mdns:amd64				install
 libnss-myhostname:amd64				install
 libnss3:amd64					install
 libntfs-3g871					install
-libntlm0:amd64					install
 libnuma1:amd64					install
 liboauth0:amd64					install
 libobrender32v5					install
@@ -1508,7 +1508,6 @@ libteamdctl0:amd64				install
 libtelepathy-glib0:amd64			install
 libtelepathy-logger3:amd64			install
 libterm-readkey-perl				install
-libtermkey1:amd64				install
 libtevent0:amd64				install
 libtext-charwidth-perl				install
 libtext-iconv-perl				install
@@ -1522,6 +1521,7 @@ libtimedate-perl				install
 libtinfo-dev:amd64				install
 libtinfo5:amd64					install
 libtk8.6:amd64					install
+libtokyocabinet9:amd64				install
 libtomcat8-java					install
 libtool						install
 libtotem-plparser-common			install
@@ -1542,7 +1542,6 @@ libudev1:amd64					install
 libudisks2-0:amd64				install
 libumfpack5:amd64				install
 libunbound2:amd64				install
-libunibilium0:amd64				install
 libunique-1.0-0					install
 libunistring0:amd64				install
 libupnp6					install
@@ -1579,7 +1578,6 @@ libvorbisfile3:amd64				install
 libvpx4:amd64					install
 libvte-2.91-0:amd64				install
 libvte-2.91-common				install
-libvterm0:amd64					install
 libwacom-bin					install
 libwacom-common					install
 libwacom2:amd64					install
@@ -1815,8 +1813,6 @@ lxsession-default-apps				install
 lxsession-logout				install
 lxtask						install
 m4						install
-mailutils					install
-mailutils-common				install
 make						install
 man-db						install
 manpages					install
@@ -1852,9 +1848,11 @@ mono-runtime-sgen				install
 mount						install
 mousetweaks					install
 mpd						install
+mpv						deinstall
 mscompress					install
 multiarch-support				install
 murrine-themes					install
+mutt						install
 mutter						install
 mutter-common					install
 mysql-common					install
@@ -1863,13 +1861,10 @@ nano						install
 nautilus					install
 nautilus-data					install
 nautilus-sendto					install
-ncmpcpp						install
 ncurses-base					install
 ncurses-bin					install
 ncurses-term					install
 neofetch					install
-neovim						install
-neovim-runtime					install
 netbase						install
 netcat-traditional				install
 netpbm						install
@@ -1936,6 +1931,7 @@ polari						install
 policykit-1					install
 poppler-data					install
 poppler-utils					install
+postfix-sqlite					deinstall
 powermgmt-base					install
 powertop					install
 ppp						install
@@ -2075,6 +2071,7 @@ r-other-iwrlars					install
 r-other-nitpick					install
 r-recommended					install
 rake						install
+ranger						install
 rarian-compat					install
 readline-common					install
 realmd						install
@@ -2221,6 +2218,8 @@ vlc-plugin-skins2:amd64				install
 vlc-plugin-video-output:amd64			install
 vlc-plugin-video-splitter:amd64			install
 vlc-plugin-visualization:amd64			install
+w3m						install
+w3m-img						install
 wamerican					install
 wayland-protocols				install
 wfrench						install
@@ -2306,11 +2305,10 @@ xxd						install
 xz-utils					install
 yelp						install
 yelp-xsl					install
+youtube-dl					deinstall
 zeitgeist-core					install
 zenity						install
 zenity-common					install
 zip						install
 zlib1g:amd64					install
 zlib1g-dev:amd64				install
-zsh						deinstall
-zsh-common					deinstall
