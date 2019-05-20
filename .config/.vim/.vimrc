@@ -1,7 +1,6 @@
 " ##################
 " # General option #
 " ##################
-
 " ## Encodage
 
 " Buffer encoding in UTF-8
@@ -10,9 +9,9 @@ set encoding=utf-8
 " File encoding in UTF-8
 set fileencoding=utf-8
 
-" #####################
-" # Shell, X and Unix #
-" #####################
+" ##############
+" # Vim Option #
+" ##############
 
 " ## For shell 
 
@@ -55,6 +54,18 @@ set noswapfile
 " Cut the line after a word only
 set linebreak 
 
+"###################
+"# Folding setting #
+"###################
+
+"set foldmethod=indent
+"set foldlevelstart=1
+
+"let javaScript_fold=1         " JavaScript
+"let php_folding=1             " PHP
+"let vimsyn_folding='af'       " Vim script
+"let xml_syntax_folding=1      " XML
+
 " ###########
 " # Plugins #
 " ###########
@@ -75,16 +86,13 @@ Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/Lokaltog/vim-easymotion'
 Plugin 'https://github.com/itchyny/lightline.vim'
 Plugin 'https://github.com/Shutnik/jshint2.vim'
-"Plugin 'https://github.com/skammer/vim-css-color'
-Plugin 'morhetz/gruvbox'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'https://github.com/aonemd/kuroi.vim'
-Plugin 'rust-lang/rust.vim'
 Plugin 'https://github.com/joshdick/onedark.vim.git'
-Plugin 'dracula/vim'
 Plugin 'https://github.com/pangloss/vim-javascript.git'
 Plugin 'makerj/vim-pdf'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'valloric/youcompleteme'
+Plugin 'http://github.com/Raimondi/delimitMate'
+Plugin 'https://github.com/kaicataldo/material.vim'
 
 call vundle#end()         
 filetype plugin indent on 
@@ -102,6 +110,8 @@ execute pathogen#infect()
 " Insert mod
 inoremap <C-_> <Esc>u<CR>
 inoremap <F3> <Esc>:vsp<CR>
+
+"inoremap " ""<Esc>
 
 " Normal mod
 noremap <F3> :vsp <CR>
@@ -124,7 +134,10 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 "autocmd vimenter * NERDTree
 
 " Automatically closing vim if the nerdtree tab is the last one 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"Ignoring file 
+let NERDTreeIgnore = ['\.DS_Store$', '.git$', 'Cargo.lock']
 
 "######################
 "#  theme and colors  #
@@ -143,6 +156,17 @@ set background=dark    " Setting dark mode
 
 "colorscheme kuroi
 
-colorscheme onedark
+"colorscheme onedark
+
+"colorscheme symfony
 
 "colorscheme dracula
+
+colorscheme material
+
+"########
+"# Font #
+"########
+
+set guifont =Hack
+
