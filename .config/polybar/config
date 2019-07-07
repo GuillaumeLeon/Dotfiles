@@ -23,9 +23,6 @@ foreground = ${xrdb:foreground}
 urgent = ${xrdb:color9}
 secondary = ${xrdb:secondary}
 underline = ${xrdb:color3}
-ram = ${xrdb:color14}
-cpu = ${xrdb:color13}
-spotify = ${xrdb:color10}
 power= ${colors.urgent}
 
 [bar/default]
@@ -51,7 +48,7 @@ font-4 = MaterialIcons:size=11;4
 
 modules-left = i3
 modules-center = xwindow
-modules-right = backlight battery cpu memory wireless-network volume date powermenu 
+modules-right = wireless backlight pulseaudio battery date powermenu 
 
 [module/i3]
 type = internal/i3
@@ -79,12 +76,6 @@ label-visible-foreground = ${colors.active}
 label-unfocused-foreground = ${colors.secondary}
 label-urgent-foreground = ${colors.urgent} 
 
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 3
-ws-icon-3 = 4
-ws-icon-4 = 5
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -97,44 +88,22 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.secondary}ed-foreground = ${colors.foreground-alt}
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format = <label>
-format-prefix = " "
-label = %percentage%%
-format-foreground = ${colors.cpu}
-label-foreground = ${colors.cpu}
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-label = %percentage_used%%
-format-foreground = ${colors.ram}
-label-foreground = ${colors.ram}
-
 [module/date]
 type = internal/date
 date = %{F#88C0D0}   %{F#4C566A}%B %d,  %{F#D8DEE9}%H:%M
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_card.pci-0000_00_1f.3.analog-stereo
+use-ui-max = true
+interval = 5
 format-volume = <ramp-volume> <label-volume>
-format-muted =  
+format-muted = 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-foreground = ${colors.active}
-bar-volume-width = 6
-bar-volume-indicator =
-bar-volume-fill = 
-bar-volume-fill-font = 3
-bar-volume-fill-foreground = ${colors.foreground}
-bar-volume-empty = 
-bar-volume-empty-font = 3
-bar-volume-empty-foreground = ${colors.secondary}
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
@@ -222,10 +191,6 @@ label-close = 
 label-close-foreground = ${colors.power}
 label-separator = |
 label-separator-foreground = ${colors.secondary}
- 
-
-
-
 
 menu-0-0 = Reboot
 menu-0-0-foreground = ${colors.foreground}
@@ -233,7 +198,7 @@ menu-0-0-exec = systemctl reboot
 menu-0-1 = Suspend
 menu-0-1-foreground = ${colors.foreground}
 menu-0-1-exec = systemctl suspend
-menu-0-2 = Power Off
+menu-0-2 = PowerOff
 menu-0-2-foreground = ${colors.foreground}
 menu-0-2-exec = systemctl poweroff
 
@@ -253,13 +218,12 @@ card = intel_backlight
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = <label> <ramp>
+format = <label> 
 
 ; Available tokens:
 ;   %percentage% (default)
 label = %percentage%%
 
-; Only applies if <ramp> is used
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
@@ -272,78 +236,12 @@ bar-indicator = |
 bar-fill = ─
 bar-empty = ─
 
-[module/wireless-network]
+[module/wireless]
 type = internal/network
-interface = wlan1
+interface = wlp2s0
+label-connected = "  "
+format-connected = <label-connected>
+format-connected-background = ${xrdb:background}
 
-; Seconds to sleep between updates
-; Default: 1
-interval = 3.0
 
-; Test connectivity every Nth update
-; A value of 0 disables the feature
-; NOTE: Experimental (needs more testing)
-; Default: 0
-;ping-interval = 3
-
-; @deprecated: Define min width using token specifiers (%downspeed:min% and
-%upspeed:min%)
-; Minimum output width of upload/download rate
-; Default: 3
-udspeed-minwidth = 5
-
-; Accumulate values from all interfaces
-; when querying for up/downspeed rate
-; Default: false
-accumulate-stats = true
-
-; Consider an `UNKNOWN` interface state as up.
-; Some devices have an unknown state, even when they're running
-; Default: false
-unknown-as-up = true
-
-; Available tags:
-;   <label-connected> (default)
-;   <ramp-signal>
-format-connected = <ramp-signal> <label-connected>
-
-; Available tags:
-;   <label-disconnected> (default)
-format-disconnected = <label-disconnected>
-
-; Available tags:
-;   <label-connected> (default)
-;   <label-packetloss>
-;   <animation-packetloss>
-format-packetloss = <label-packetloss> <label-connected>
-
-; All labels support the following tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %local_ip6% [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-
-; Default: %ifname% %local_ip%
-label-connected = %essid% %downspeed:9%
-label-connected-foreground = #eefafafa
-
-; Default: (none)
-label-disconnected = not connected
-label-disconnected-foreground = #66ffffff
-
-; Default: (none)
-;label-packetloss = %essid%
-;label-packetloss-foreground = #eefafafa
-
-; Only applies if <ramp-signal> is used
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
 
