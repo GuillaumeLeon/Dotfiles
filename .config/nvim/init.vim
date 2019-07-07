@@ -92,6 +92,9 @@ Plugin 'makerj/vim-pdf'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'http://github.com/Raimondi/delimitMate'
 Plugin 'https://github.com/kaicataldo/material.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'trevordmiller/nova-vim'
+Plugin 'arcticicestudio/nord-vim'
 
 call vundle#end()         
 filetype plugin indent on 
@@ -151,7 +154,7 @@ set background=dark    " Setting dark mode
 
 "colorscheme codedark
 
-"colorscheme nord
+colorscheme nord
 
 "colorscheme kuroi
 
@@ -161,7 +164,9 @@ set background=dark    " Setting dark mode
 
 "colorscheme dracula
 
-colorscheme material
+"colorscheme material
+
+"colorscheme nova
 
 "########
 "# Font #
