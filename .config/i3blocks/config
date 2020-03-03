@@ -33,42 +33,23 @@ markup=none
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
-label=♪
-instance=Master
-instance=PCM
-interval=once
-signal=10
-separator=false
-
 [script]
-label=
+label=  
 command=/home/guillaume/.config/i3blocks/script/light.sh
-
 interval=5
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
-[memory]
-label=Ram
-
-interval=30
-
-#[memory]
-#label=SWAP
-#instance=swap
-#separator=false
-#interval=30
 
 # Disk usage
 #
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-#[disk]
-#label=HOME
+[disk]
+label=
 #instance=/mnt/data
-#interval=30
+interval=30
 
 # Network interface monitoring
 #
@@ -79,6 +60,10 @@ interval=30
 color=#00FF00
 interval=10
 
+[script]
+label=  
+command=/home/guillaume/.config/i3blocks/script/bluetooth.sh
+interval=5
 
 [wifi]
 #instance=wlp3s0
@@ -93,11 +78,15 @@ separator=false
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
+#[memory]
+#instance=mem
+#separator=true
+#interval=5
+
 [cpu_usage]
-label=CPU
+label=  
 interval=5
-min_width=CPU: 100.00%
-#separator=false
+#min_width=CPU: 100.00%
 
 #[load_average]
 #interval=10
@@ -114,20 +103,5 @@ command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
 
 [shutdown_menu]
-full_text=Quit
-# If you are using FontAwesome, we recommend the power-off icon:
-# http://fontawesome.io/icon/power-off/
-command=~/.config/i3blocks/script/shutdown_menu.sh
-#FG_COLOR=#bbbbbb
-#BG_COLOR=#111111
-#HLFG_COLOR=#111111
-#HLBG_COLOR=#bbbbbb
-#BORDER_COLOR=#222222
-#ROFI_TEXT=Menu:
-#ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
-#ZENITY_TITLE=Menu
-#ZENITY_TEXT=Action:
-#ZENITY_OPTIONS=--column= --hide-header
-#ENABLE_CONFIRMATIONS=true (must be true or false)
-#LAUNCHER=rofi (must be rofi or zenity)
-#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+full_text=0
+command=~/.config/i3blocks/script/power.sh
