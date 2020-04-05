@@ -28,7 +28,10 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-# Volume indicator
+
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]# Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
@@ -40,7 +43,6 @@ interval=5
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
-
 # Disk usage
 #
 # The directory defaults to $HOME if the instance is not specified.
@@ -65,10 +67,10 @@ label= 
 command=/home/guillaume/.config/i3blocks/script/bluetooth.sh
 interval=5
 
-[wifi]
+#[wifi]
 #instance=wlp3s0
-interval=10
-separator=false
+#interval=10
+#separator=false
 
 #[bandwidth]
 #instance=eth0
@@ -103,5 +105,5 @@ command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
 
 [shutdown_menu]
-full_text=0
+full_text=
 command=~/.config/i3blocks/script/power.sh
