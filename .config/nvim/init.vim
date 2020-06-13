@@ -1,8 +1,8 @@
 " MAP LEADER 
-
 let mapleader = " " 
-set encoding=utf-8
-set fileencoding=utf-8
+
+set encoding=UTF-8
+set fileencoding=UTF-8
 set mouse=a
 set textwidth=80
 set termguicolors
@@ -32,7 +32,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 "  ~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/')
 
-"Plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/mattn/emmet-vim'
@@ -42,14 +41,13 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'https://github.com/lilydjwg/colorizer'
 Plugin 'tpope/vim-commentary'
-Plugin 'voldikss/vim-floaterm'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()         
 filetype plugin indent on 
-
-inoremap <F3> <Esc>:vsp && i<CR>
 
 noremap <F3> :vsp <CR>
 noremap <up> <nop>
@@ -78,17 +76,19 @@ let NERDTreeIgnore = ['\.DS_Store$', '.git$', 'Cargo.lock']
 
 set background=dark
 
-colorscheme palenight
+" colorscheme palenight
+colorscheme gruvbox
 
-set guifont =Hack
+set guifont =Hack\ Nerd\ Font\ 12
 
 " Display Git branch in status bar
 let g:lightline = {
-	 \ 'active': {
-	 \   'left': [ [ 'mode', 'paste' ],
-	 \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-	 \ },
-	 \ 'component_function': {
-	 \   'gitbranch': 'gitbranch#name'
-	 \ },
-	 \ }
+	    \ 'active': {
+	    \   'left': [ [ 'mode', 'paste' ],
+	    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	    \ },
+	    \ 'component_function': {
+	    \   'gitbranch': 'gitbranch#name'
+	    \ },
+	    \ }
+let g:coc_disable_startup_warning = 1
