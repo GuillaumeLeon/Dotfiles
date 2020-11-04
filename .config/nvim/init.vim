@@ -19,34 +19,30 @@ set ttyfast
 set noeb vb t_vb=
 set noswapfile
 set linebreak 
+set shell=/bin/bash 
 
 " ###########
 " # Plugins #
 " ###########
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-" Vundle
-" Install:
-"  git clone https://github.com/VundleVim/Vundle.vim.git
-"  ~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle/')
+call plug#begin(stdpath('data') . '/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'https://github.com/scrooloose/nerdtree'
-Plugin 'https://github.com/mattn/emmet-vim'
-Plugin 'https://github.com/tpope/vim-surround'
-Plugin 'https://github.com/itchyny/lightline.vim'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'https://github.com/lilydjwg/colorizer'
-Plugin 'tpope/vim-commentary'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'morhetz/gruvbox'
+Plug 'VundleVim/Vundle.vim'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/mattn/emmet-vim'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'StanAngeloff/php.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'https://github.com/lilydjwg/colorizer'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
 
-call vundle#end()         
+call plug#end()
 filetype plugin indent on 
 
 noremap <F3> :vsp <CR>
