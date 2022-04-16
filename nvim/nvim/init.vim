@@ -35,31 +35,37 @@ set completeopt=noinsert,menuone,noselect
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
+" Autocomplete server
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" PHP
 Plug 'noahfrederick/vim-laravel'
 Plug 'StanAngeloff/php.vim'
 Plug 'jwalton512/vim-blade'
+
+Plug 'mattn/emmet-vim'
 Plug 'yuezk/vim-js'
+
+" git
+Plug 'kdheepak/lazygit.nvim'
+
+" jsx
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'mxw/vim-jsx'
-Plug 'kdheepak/lazygit.nvim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'arnaud-lb/vim-php-namespace'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+
+" Svelte
+Plug 'evanleck/vim-svelte'
 
 call plug#end()
 
@@ -78,11 +84,18 @@ map <leader>to :tabonly<cr>
 map <leader>td :tabclose<cr>
 map <leader>tm :tabnext<cr> 
 map <leader>tb :tabprevious<cr> 
-" map <leader>ff :Telescope find_files<cr>
+
 map <leader>ff :Files<cr>
 map <leader>fs :Ag<cr>
+
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nr :NERDTreeRefreshRoot<cr>
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+
 
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
