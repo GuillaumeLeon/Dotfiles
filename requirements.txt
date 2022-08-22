@@ -1,0 +1,9 @@
+cargo
+golang
+nvm
+ruby
+ruby-dev
+python3
+fd-file
+fzf
+ripgrep
