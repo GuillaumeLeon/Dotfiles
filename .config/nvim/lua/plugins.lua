@@ -41,6 +41,10 @@ packer.startup(function()
         "jose-elias-alvarez/null-ls.nvim",
         config = require("nullls_setup")
     }) -- Null LS (Formatter / Linters)
+    packer.use({
+        "MunifTanjim/eslint.nvim",
+        config = require("eslint_setup")
+    })
 
     -- Snippets
     packer.use("L3MON4D3/LuaSnip")
@@ -87,7 +91,7 @@ packer.startup(function()
     packer.use({"numToStr/Comment.nvim", config = require("comment_setup")})
 
     -- Surround
-    packer.use({"ur4ltz/surround.nvim"})
+    packer.use({"tpope/vim-surround"})
 
     -- Auto indent detection
     packer.use("tpope/vim-sleuth")

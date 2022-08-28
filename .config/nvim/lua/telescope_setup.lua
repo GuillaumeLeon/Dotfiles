@@ -7,7 +7,7 @@ if ok then
             find_files = {
                 find_command = {
                     "fd", "--type", "f", "-H", "-E", "node_modules", "-E",
-                    ".git", "-I"
+                    ".git", "-E", "vendor", "-I",
                 }
             }
         },
@@ -29,7 +29,7 @@ if ok then
     telescope.load_extension("file_browser")
     telescope.load_extension("fzf")
     telescope.load_extension("project")
-
+  
 end
 
 if ok_m then

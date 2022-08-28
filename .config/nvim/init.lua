@@ -30,4 +30,5 @@ if ok_m then
 	-- lazygit
 	m.map("<C-k>", ":LazyGit<CR>", "silent")
 	m.map("<leader>nn", ":NvimTreeToggle<CR>", "silent")
+	m.map("<M-h", ":ToggleTerm", "silent")
 end
