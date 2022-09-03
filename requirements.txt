@@ -7,3 +7,5 @@ python3
 fd-file
 fzf
 ripgrep
+beekeeper studio
+warp
