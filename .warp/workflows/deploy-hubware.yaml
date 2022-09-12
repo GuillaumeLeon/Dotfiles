@@ -1,0 +1,25 @@
+name: Deploy to dev environnement
+
+command: |-
+    docker run --entrypoint 'bash' serverless-hubware-app-{{environnement}} -c \
+    "firebase deploy --only functions:analyseOnePilotTicketOnCall,functions:analyseOnePilotTicketScheduled,functions:saveOnePilotResponseDispatcher,functions:saveOnePilotResponseOnCall,functions:saveOnePilotResponseScheduled,functions:saveTicketOnCall,functions:analyseAllOnePilotTicketsOnCall"
+tags:
+    - Docker
+    - Build
+    - Deployment
+
+description: Deploy the onepilot related cloud functions
+
+arguments:
+    # Name of the argument within the command. This must exactly match the name of the argument
+    # within the command (without the curly braces).
+    - name: environnement
+      # The description of the argument.
+      description: Environnement you wich to deploy (staging or production)
+      default_value: staging
+
+author: Guillaume Leon
+
+author_url: "guillaume@onepilot.co"
+
+shells: []

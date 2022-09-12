@@ -1,0 +1,30 @@
+name: Deploy to dev environnement
+
+command: |-
+    DOCKER_BUILDKIT=1 docker build . \
+        -f Dockerfile \
+        -t serverless-hubware-app-{{environnement}} \
+        --secret id=google-application-credentials,src=/Users/guillaume/Code/hubware-thingy/service-account-{{environnement}}.json \
+        --secret id=npm-token,src=/Users/guillaume/.npmrc \
+        --build-arg PROJECT_ID=hubware-{{environnement}}
+
+tags:
+    - Docker
+    - Build
+    - Deployment
+
+description: Build the docker container for Hubware serverless app
+
+arguments:
+    # Name of the argument within the command. This must exactly match the name of the argument
+    # within the command (without the curly braces).
+    - name: environnement
+      # The description of the argument.
+      description: Environnement you wich to deploy (staging or production)
+      default_value: staging
+
+author: Guillaume Leon
+
+author_url: "guillaume@onepilot.co"
+
+shells: []

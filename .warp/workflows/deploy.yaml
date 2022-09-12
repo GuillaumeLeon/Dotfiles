@@ -1,0 +1,25 @@
+name: 
+
+command: |-
+    docker run --entrypoint 'bash' serverless-hubware-app-staging -c \
+  "firebase deploy --only functions:analyseOnePilotTicketOnCall,functions:analyseOnePilotTicketScheduled,functions:saveOnePilotResponseDispatcher,functions:saveOnePilotResponseOnCall,functions:saveOnePilotResponseScheduled,functions:saveTicketOnCall,functions:analyseAllOnePilotTicketsOnCall"
+
+tags:
+    - Docker
+    - Deployment
+
+description: use the envoy tool to deploy a project based on the Envoy.blade.php
+
+arguments:
+    # Name of the argument within the command. This must exactly match the name of the argument
+    # within the command (without the curly braces).
+    - name: branch_name
+      # The description of the argument.
+      description: The name of the branch you wich to deploy
+      default_value: master
+
+author: Guillaume Leon
+
+author_url: "guillaume@onepilot.co"
+
+shells: []

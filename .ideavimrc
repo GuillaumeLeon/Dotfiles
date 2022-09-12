@@ -1,0 +1,26 @@
+let mapleader = " "
+let visualbell
+let noerrorbells
+
+set surround
+set easymotion
+set commentary
+set clipboard+=unnamed
+set multiple-cursors
+
+map <C-e> :action RecentFiles<CR>
+map gcc :action CommentByBlockComment<CR>
+map <Leader>ff :action SearchEverywhere<CR>
+map <Leader>fs :action Find<CR>
+
+map <Leader>gd :action GotoDeclaration<CR>
+map <Leader>gi :action GotoImplementation<CR>
+map <Leader>gr :action RefactoringMenu<CR>
+
+map <Leader>q :action CloseContent<CR>
+map <Leader>Q :action ReopenClosedTab<CR>unmap <Left> <CR>
+
+unmap <Right> <CR>
+unmap <Left> <CR>
+unmap <Top> <CR>
+unmap <Bottom> <CR>
