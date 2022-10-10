@@ -25,6 +25,8 @@ packer.startup(function()
 
     -- Color Scheme
     packer.use({"morhetz/gruvbox", as = "gruvbox"})
+    packer.use({"catppuccin/nvim", as = "catppuccin"})
+
     packer.use("kyazdani42/nvim-web-devicons")
 
     -- Status bar
@@ -104,5 +106,8 @@ packer.startup(function()
 
     -- Autopairs
     packer.use({"windwp/nvim-autopairs", config = require("autopairs_setup")})
+    
+    -- startup
+    packer.use({"startup-nvim/startup.nvim", requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}, config = require("startup_setup") })
 
 end)

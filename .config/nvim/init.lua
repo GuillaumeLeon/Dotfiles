@@ -16,8 +16,10 @@ vim.opt.wrap = false
 require("plugins")
 
 -- THEMES
-vim.cmd("colorscheme gruvbox")
-
+vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme tundra")
+vim.opt.background = 'dark'
+-- vim.cmd('colorscheme tundra')
 
 local ok_m, m = pcall(require, "mapx")
 
