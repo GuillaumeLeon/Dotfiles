@@ -30,7 +30,7 @@ if ok then
         },
         ignore_install = {},
         highlight = {enable = true},
-        indent = {enable = false},
+        indent = {enable = true},
         autotag = {enable = true}
     })
 end

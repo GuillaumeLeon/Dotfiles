@@ -7,5 +7,7 @@ python3
 fd-file
 fzf
 ripgrep
-beekeeper studio
 warp
+prettier
+luarocks
+
