@@ -1,3 +1,5 @@
-local ok, gitsigns = pcall(require, "gitsigns")
+function setup()
+    local ok, gitsigns = pcall(require, "gitsigns")
 
-if ok then gitsigns.setup() end
+    if ok then gitsigns.setup() end
+end

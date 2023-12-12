@@ -1,3 +1,5 @@
-local ok, indent_bl = pcall(require, "indent_blanklinent")
+function setup()
+    local ok, indent_bl = pcall(require, "indent_blanklinent")
 
-if ok then indent_bl.setup({show_end_of_line = true}) end
+    if ok then indent_bl.setup({ show_end_of_line = true }) end
+end

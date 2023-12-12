@@ -6,13 +6,13 @@ local ok_rusttools, rust_tools = pcall(require, "rust-tools")
 
 local servers = {
     "rust_analyzer", "svelte", "tsserver", "yamlls", "jsonls",
-    "html", "cssls", "cssmodules_ls", "sumneko_lua", "phpactor"
+    "html", "cssls", "cssmodules_ls", "phpactor", "emmet_ls"
 }
 
-if ok_installer then lsp_installer.setup({ensure_installed = servers}) end
+if ok_installer then lsp_installer.setup({ ensure_installed = servers }) end
 
 if ok_cmp and ok_lsp and ok_lspconfig then
-    local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol
+    local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol
     .make_client_capabilities())
 
     local on_attach = function()
@@ -33,7 +33,7 @@ if ok_cmp and ok_lsp and ok_lspconfig then
         -- USE RUST TOOLS FOR RUST
         if server == "rust_analyzer" then
             if ok_rusttools then
-                rust_tools.setup({tools = {on_initialized = on_attach}})
+                rust_tools.setup({ tools = { on_initialized = on_attach } })
             else
                 lsp["rust_analyzer"].setup({
                     capabilities = capabilities,
@@ -50,39 +50,21 @@ if ok_cmp and ok_lsp and ok_lspconfig then
                         false
                         client.server_capabilities
                         .documentRangeFormattingProvider = false
-                    elseif server == "sumneko_lua" then
-                        client.server_capabilities.documentFormattingProvider =
-                        false
-                        client.server_capabilities
-                        .documentRangeFormattingProvider = false
                     end
                 end
             })
         end
-
     end
-
-    -- SPECIFICS
-    lsp_config.sumneko_lua.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-            Lua = {
-                runtime = {
-                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                    version = "LuaJIT"
-                },
-                diagnostics = {
-                    -- Get the language server to recognize the `vim` global
-                    globals = {"vim"}
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = vim.api.nvim_get_runtime_file("", true)
-                },
-                -- Do not send telemetry data containing a randomized but unique identifier
-                telemetry = {enable = false}
-            }
-        }
-    })
+    lsp_config.eslint.setup {
+        on_attach = function()
+            local group = vim.api.nvim_create_augroup("Eslint", {})
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = group,
+                pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+                command = "EslintFixAll",
+                desc = "Run eslint when saving buffer.",
+            })
+        end,
+    }
 end
+
