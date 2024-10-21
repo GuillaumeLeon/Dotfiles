@@ -7,7 +7,7 @@ if ok then
             find_files = {
                 find_command = {
                     "fd", "--type", "f", "-H", "-E", "node_modules", "-E",
-                    ".git", "-E", "vendor", "-E", ".idea", "-E", ".vscode", "-I",
+                    ".git", "-E", "vendor", "-E", ".idea", "-E", ".vscode",
                 }
             }
         },

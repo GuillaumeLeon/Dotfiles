@@ -3,6 +3,8 @@ function setup()
 
     if ok then
         local formatting = null_ls.builtins.formatting
-        null_ls.setup({ sources = { formatting.lua_format, formatting.prettier } })
+        null_ls.setup({ 
+            sources = { formatting.lua_format, formatting.prettier }
+        })
     end
 end

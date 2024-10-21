@@ -5,8 +5,8 @@ local ok_lspconfig, lsp_config = pcall(require, "lspconfig")
 local ok_rusttools, rust_tools = pcall(require, "rust-tools")
 
 local servers = {
-    "rust_analyzer", "svelte", "tsserver", "yamlls", "jsonls",
-    "html", "cssls", "cssmodules_ls", "phpactor", "emmet_ls"
+    "html", "cssls", "cssmodules_ls", "emmet_ls", "eslint", "jsonls",
+    "phpactor", "sqlls", "ts_ls", "yamlls", "marksman"
 }
 
 if ok_installer then lsp_installer.setup({ ensure_installed = servers }) end
@@ -45,7 +45,7 @@ if ok_cmp and ok_lsp and ok_lspconfig then
                 capabilities = capabilities,
                 on_attach = function(client)
                     on_attach()
-                    if server == "tsserver" then
+                    if server == "ts_ls" then
                         client.server_capabilities.documentFormattingProvider =
                         false
                         client.server_capabilities
@@ -55,16 +55,5 @@ if ok_cmp and ok_lsp and ok_lspconfig then
             })
         end
     end
-    lsp_config.eslint.setup {
-        on_attach = function()
-            local group = vim.api.nvim_create_augroup("Eslint", {})
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = group,
-                pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
-                command = "EslintFixAll",
-                desc = "Run eslint when saving buffer.",
-            })
-        end,
-    }
 end
 

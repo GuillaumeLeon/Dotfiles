@@ -35,6 +35,7 @@ require("lazy").setup({
     },
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     {
@@ -68,8 +69,19 @@ require("lazy").setup({
     "tpope/vim-sleuth",
     "kdheepak/lazygit.nvim",
     "907th/vim-auto-save",
+    "farmergreg/vim-lastplace",
+    "jessarcher/vim-heritage",
+    "AndrewRadev/splitjoin.vim",
     {"windwp/nvim-autopairs", config = require("autopairs_setup")},
     {"prettier/vim-prettier", build = "yarn install --frozen-lockfile --production"},
+    {"airblade/vim-rooter", 
+        init = function()
+            vim.g.rooter_manual_only = 1
+        end,
+        config = function()
+            vim.cmd('Rooter')
+        end
+    },
     {
         "adalessa/laravel.nvim",
         dependencies = {
@@ -96,6 +108,22 @@ require("lazy").setup({
             require("laravel").setup()
             require("telescope").load_extension "laravel"
         end,
+    },
+    "AndrewRadev/splitjoin.vim",
+    {
+        "Bleksak/laravel-ide-helper.nvim",
+        opts = {
+            write_to_models = true,
+            save_before_write = true,
+            format_after_gen = true,
+        },
+        enabled = function()
+            return vim.fn.filereadable("artisan") ~= 0
+        end,
+        keys = {
+            -- { "<leader>lgm", function() require("laravel-ide-helper").generate_models(vim.fn.expand("%")) end, desc = "Generate Model Info for current model" },
+            -- { "<leader>lgM", function() require("laravel-ide-helper").generate_models() end, desc = "Generate Model Info for all models" },
+        }
     }
 })
 require("cmp_setup")
