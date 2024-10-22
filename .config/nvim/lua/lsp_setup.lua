@@ -6,7 +6,7 @@ local ok_rusttools, rust_tools = pcall(require, "rust-tools")
 
 local servers = {
     "html", "cssls", "cssmodules_ls", "emmet_ls", "eslint", "jsonls",
-    "phpactor", "sqlls", "ts_ls", "yamlls", "marksman"
+    "phpactor", "sqlls", "ts_ls", "yamlls", "marksman", "denols"
 }
 
 if ok_installer then lsp_installer.setup({ ensure_installed = servers }) end
@@ -55,5 +55,14 @@ if ok_cmp and ok_lsp and ok_lspconfig then
             })
         end
     end
+    nvim_lsp.denols.setup {
+        on_attach = on_attach,
+        root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    }
+    nvim_lsp.ts_ls.setup {
+        on_attach = on_attach,
+        root_dir = nvim_lsp.util.root_pattern("package.json"),
+        single_file_support = false
+    }
 end
 
