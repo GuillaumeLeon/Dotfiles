@@ -55,13 +55,13 @@ if ok_cmp and ok_lsp and ok_lspconfig then
             })
         end
     end
-    nvim_lsp.denols.setup {
+    lsp.denols.setup {
         on_attach = on_attach,
-        root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+        root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
     }
-    nvim_lsp.ts_ls.setup {
+    lsp.ts_ls.setup {
         on_attach = on_attach,
-        root_dir = nvim_lsp.util.root_pattern("package.json"),
+        root_dir = lsp.util.root_pattern("package.json"),
         single_file_support = false
     }
 end
